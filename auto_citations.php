@@ -1,4 +1,5 @@
 <?php
+$DIFBOT_API_KEY = "ENTER YOUR DIFFBOT API KEY HERE";
 include "header.php";	
 $form_footer = "
 	 <script type='text/javascript'>
@@ -33,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	$article_day = "Day published not found";
 	$article_month = "Month published not found";
 	$article_year = "Year published not found";
-	$request_url = "http://api.diffbot.com/v2/article?token=7e40a4c52461bf474e4c3239dd2a5357&url=";
+	$request_url = "http://api.diffbot.com/v2/article?token=" . $DIFBOT_API_KEY .  "&url=";
 	$full_url = $request_url . $url;
 	$json = file_get_contents($full_url);
 	$data = json_decode($json, TRUE);
